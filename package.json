@@ -2,17 +2,17 @@
   "name": "updoot",
   "version": "1.0.0",
   "description": "A Chrome extension for avid readers who want to curate online articles.",
-  "main": "index.js",
+  "main": "js/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint",
     "start": "node index.js",
     "watch": "nodemon index.js",
     "lint": "run-p lint:*",
     "lint:html": "htmlhint ./**/*.html",
     "lint:css": "stylelint ./**/*.css",
     "lint:js": "eslint ./**/*.js",
-    "test": "npm run lint",
-    "precommit": "npm test"
+    "precommit": "npm test",
+    "seed": "node js/seed.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "metascraper": "^1.0.7",
     "mongodb": "^2.2.31"
   },
   "devDependencies": {
