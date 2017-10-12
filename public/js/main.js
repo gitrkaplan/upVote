@@ -15,6 +15,12 @@ function createElement(tagName, attributes, children) {
 
 function renderCard({ image, title, description, url }) {
 
+  const img = image
+
+  if (img == null) {
+    image = 'http://whattheme.com/wp-content/themes/whattheme/assets/images/screenshot-placeholder.png'
+  }
+
   const $card =
   createElement('div', { class: 'col s12 m6 l4' }, [
     createElement('div', { class: 'hoverable card' }, [

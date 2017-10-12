@@ -44,7 +44,16 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       image: 'https://cdn.filestackcontent.com/rXw89KfCQIuvWal613HB',
       publisher: 'Codementor',
       title: 'Creating a simple REST API with expressJS in 5min | Codementor',
-      url: 'https://www.codementor.io/wapjude/creating-a-simple-rest-api-with-expressjs-in-5min-bbtmk51mq' }
+      url: 'https://www.codementor.io/wapjude/creating-a-simple-rest-api-with-expressjs-in-5min-bbtmk51mq' },
+    {
+      author: null,
+      date: '2017-12-01T20:00:00.000Z',
+      description: 'Thrasher Magazine - skateboarding news videos photos clothing skateparks events music and more',
+      image: null,
+      publisher: null,
+      title: 'Thrasher Magazine - Displaying items by tag: Junk Drawer',
+      url: 'http://www.thrashermagazine.com/'
+    }
     ]))
     .catch(err => {
       console.error(err)
