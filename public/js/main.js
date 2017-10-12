@@ -23,7 +23,7 @@ function renderCard({ image, title, description }) {
         createElement('img', { class: 'card-img-top', src: image, alt: title }, [])
       ]),
       createElement('div', { class: 'card-content' }, [
-        createElement('span', { class: 'truncate card-title activator grey-text text-darken-4' }, ['title']),
+        createElement('span', { class: 'truncate card-title activator grey-text text-darken-4' }, [title]),
         createElement('i', { class: 'material-icons red-text text-darken-1' }, ['favorite'])
       ]),
       createElement('div', { class: 'card-reveal' }, [
