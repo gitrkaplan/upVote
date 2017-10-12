@@ -12,7 +12,7 @@
     "lint:css": "stylelint ./**/*.css",
     "lint:js": "eslint ./**/*.js",
     "precommit": "npm test",
-    "seed": "node js/seed.js"
+    "seed": "node seed.js"
   },
   "repository": {
     "type": "git",

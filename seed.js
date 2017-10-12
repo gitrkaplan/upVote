@@ -36,7 +36,14 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       'publisher': 'Bloomberg.com',
       'title': 'As Zenefits Stumbles, Gusto Goes Head-On by Selling Insurance',
       'url': 'http://www.bloomberg.com/news/articles/2016-05-24/as-zenefits-stumbles-gusto-goes-head-on-by-selling-insurance'
-    }
+    },
+    { author: 'Etanuwoma Jude',
+  date: '2017-09-20T07:00:00.000Z',
+  description: 'Creating a simple REST API with expressJS in 5min',
+  image: 'https://cdn.filestackcontent.com/rXw89KfCQIuvWal613HB',
+  publisher: 'Codementor',
+  title: 'Creating a simple REST API with expressJS in 5min | Codementor',
+  url: 'https://www.codementor.io/wapjude/creating-a-simple-rest-api-with-expressjs-in-5min-bbtmk51mq' }
     ]))
     .catch(err => {
       console.error(err)
