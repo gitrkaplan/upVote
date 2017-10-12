@@ -79,5 +79,5 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
 metaScraper
   .scrapeUrl('https://three29.com/best-css-frameworks-2017/')
   .then((metadata) => {
-    console.log(metadata)
+    // console.log(metadata)
   })

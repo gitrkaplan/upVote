@@ -55,3 +55,20 @@ const renderCard = (img, title, description) => {
 }
 
 cards.appendChild(renderCard())
+
+fetch('/api/pages')
+  .then(
+    response => {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status)
+        return
+      }
+      response.json().then(data => {
+        console.log(data)
+      })
+    }
+  )
+  .catch(err => {
+    console.log('Fetch Error :-S', err)
+  })
