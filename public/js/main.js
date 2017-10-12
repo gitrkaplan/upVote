@@ -18,7 +18,7 @@ function renderCard({ image, title, description, url }) {
   const img = image
 
   if (img == null) {
-    image = 'http://whattheme.com/wp-content/themes/whattheme/assets/images/screenshot-placeholder.png'
+    image = 'http://www.brianhilton.com.au/images/inventory/image-not-found-medium.gif'
   }
 
   const $card =
