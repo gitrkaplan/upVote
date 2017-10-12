@@ -13,7 +13,7 @@ function createElement(tagName, attributes, children) {
   return $element
 }
 
-function renderCard({ image, title, description }) {
+function renderCard({ image, title, description, url }) {
 
   const $card =
   createElement('div', { class: 'col s12 m6 l4' }, [
@@ -31,7 +31,8 @@ function renderCard({ image, title, description }) {
           title,
           createElement('i', { class: 'material-icons right' }, ['close'])
         ]),
-        createElement('p', {}, [title])
+        createElement('p', {}, [title]),
+        createElement('a', { href: url, target: '_blank' }, ['Read article'])
       ])
     ])
   ])
