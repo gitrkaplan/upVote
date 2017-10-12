@@ -3,5 +3,10 @@ html {
 }
 
 .navbar-fixed {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+.card-image {
+  height: 250px;
+  width: auto;
 }
