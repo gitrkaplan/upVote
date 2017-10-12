@@ -46,30 +46,6 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       })
   })
 
-  app.put('/api/pages/:id', (req, res) => {
-    pages
-      .updateOne({ id: req.params.id }, req.body, (err, result) => {
-        if (err) {
-          console.error(err)
-          res.sendStatus(500)
-        }
-        console.log(req.body)
-        res.sendStatus(202)
-      })
-  })
-
-  app.delete('/api/pages/:id', (req, res) => {
-    pages
-      .deleteOne({ id: req.params.id }, (err, result) => {
-        if (err) {
-          console.error(err)
-          res.sendStatus(500)
-        }
-        console.log('Deleted!')
-        res.sendStatus(204)
-      })
-  })
-
   app.listen(3000, () => {
     console.log('Visit http://localhost:3000')
   })
