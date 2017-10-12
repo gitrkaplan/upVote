@@ -1,0 +1,16 @@
+html {
+  background-color: #ecf0f1;
+}
+
+.navbar-fixed {
+  margin-bottom: 25px;
+}
+
+.card-image {
+  height: 250px;
+  width: auto;
+}
+
+nav {
+  background-color: #16a085;
+}
