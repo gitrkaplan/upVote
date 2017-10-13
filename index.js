@@ -6,6 +6,10 @@ const { ObjectId } = require('mongodb')
 const metaScraper = require('metascraper')
 const path = require('path')
 
+const app = express()
+app.use(jsonParser)
+app.use(express.static('public'))
+
 MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
 
   if (err) {
@@ -14,9 +18,6 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
   }
 
   const pages = db.collection('pages')
-  const app = express()
-  app.use(jsonParser)
-  app.use(express.static('public'))
 
   app.get('/', (req, res) => {
     res.sendFile(path.resolve('index.html'))
@@ -51,3 +52,27 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
   })
 
 })
+
+const postUrl = function (url) {
+  MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
+    if (err) {
+      console.error(err)
+      process.exit(1)
+    }
+    const pages = db.collection('pages')
+    metaScraper
+      .scrapeUrl(url)
+      .then((metadata) => {
+        pages
+          .insertOne(metadata)
+      })
+      .catch(err => {
+        console.error(err)
+        process.exit(1)
+      })
+
+      .then(() => db.close())
+  })
+}
+
+postUrl('https://www.youtube.com/watch?v=lKyQfAipZt8')

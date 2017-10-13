@@ -1,0 +1,65 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"/>
+    <title>upVote</title>
+    <style type="text/css">
+      body {
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+
+      .btn {
+        border-radius:23px;
+      }
+
+      #container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  </head>
+
+  <body>
+    <div class="row">
+        <div class="col s12">
+          <div class="card grey lighten-3">
+            <div class="card-content dark-text">
+              <span class="card-title">upVote</span>
+              <p>To add this site to upVote, simply click on the related tags and click add.</p>
+            </div>
+            <div class="card-action center-align">
+              <!-- <a class="waves-effect waves-light btn"><i class="devicon-javascript-plain"></i></a>
+              <a class="waves-effect waves-light btn"><i class="devicon-angularjs-plain"></i></a>
+              <a class="waves-effect waves-light btn"><i class="devicon-express-original"></i></a>
+              <a class="waves-effect waves-light btn"><i class="devicon-nodejs-plain"></i></a>
+              <a class="waves-effect waves-light btn"><i class="devicon-mongodb-plain"></i></a>
+              <a class="waves-effect waves-light btn"><i class="devicon-html5-plain-wordmark"></i></a> -->
+              <a id="add-button" class="hoverable btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

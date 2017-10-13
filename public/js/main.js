@@ -37,7 +37,7 @@ function renderCard({ image, title, description, url }) {
           title,
           createElement('i', { class: 'material-icons right' }, ['close'])
         ]),
-        createElement('p', {}, [title]),
+        createElement('p', {}, [description]),
         createElement('a', { href: url, target: '_blank' }, ['Read article'])
       ])
     ])
