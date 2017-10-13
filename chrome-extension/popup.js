@@ -131,6 +131,7 @@
 //   });
 // });
 
+let url = ''
 
 document.addEventListener('DOMContentLoaded', function () {
   var addButton = document.getElementById('add-button')
@@ -140,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
       lastFocusedWindow: true
     }, tabs => {
       const tab = tabs[0]
-      console.log(tab.url)
+      url = tab.url
     })
   })
 })

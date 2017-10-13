@@ -53,7 +53,7 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
 
 })
 
-const postUrl = function (url) {
+const postUrl = url => {
   MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
     if (err) {
       console.error(err)
@@ -74,5 +74,3 @@ const postUrl = function (url) {
       .then(() => db.close())
   })
 }
-
-postUrl('https://www.youtube.com/watch?v=lKyQfAipZt8')
