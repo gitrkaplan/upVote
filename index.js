@@ -6,10 +6,6 @@ const { ObjectId } = require('mongodb')
 const metaScraper = require('metascraper')
 const path = require('path')
 
-const app = express()
-app.use(jsonParser)
-app.use(express.static('public'))
-
 MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
 
   if (err) {
@@ -18,6 +14,9 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
   }
 
   const pages = db.collection('pages')
+  const app = express()
+  app.use(jsonParser)
+  app.use(express.static('public'))
   app.use(bodyParser.urlencoded({ extended: true }))
 
   app.get('/', (req, res) => {
