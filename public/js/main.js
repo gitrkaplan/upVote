@@ -25,8 +25,7 @@ function renderCard({ image, title, description, url }) {
   createElement('div', { class: 'col s12 m6 l4' }, [
     createElement('div', { class: 'hoverable card' }, [
       createElement('div', { class: 'card-image waves-effect waves-block waves-light' }, [
-        createElement('img', { class: 'activator', src: image, alt: title }, []),
-        createElement('img', { class: 'card-img-top', src: image, alt: title }, [])
+        createElement('img', { class: 'activator', src: image, alt: title }, [])
       ]),
       createElement('div', { class: 'card-content' }, [
         createElement('span', { class: 'truncate card-title activator grey-text text-darken-4' }, [title]),

@@ -5,6 +5,10 @@
   "description": "This extension allows the user to add cards to the upVote site.",
   "version": "1.0",
 
+  "icons": {
+    "48": "icon.png"
+  },
+
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html",
@@ -12,7 +16,8 @@
   },
   "permissions": [
     "activeTab",
-      "tabs",
-    "storage"
+    "tabs",
+    "storage",
+    "http://localhost:3000/"
   ]
 }

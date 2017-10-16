@@ -68,7 +68,17 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       image: null,
       publisher: 'Node.js',
       title: 'Anatomy of an HTTP Transaction | Node.js',
-      url: 'https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/' }
+      url: 'https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/' },
+    {
+      '_id': '59e2771830eaa515be906dc4',
+      'author': 'Reactdom@reactdom·50m#reactjs #reactnative #graphql Newsletter Issue 55 #redux #indiedev #nodejs #webpack #reactrouter #react Https://t.co/fufdh2mbuvreply on Twitterretweet on Twitterlike on Twittertwitter',
+      'date': '2017-10-07T18:24:00.000Z',
+      'description': 'Last updated on October 12th, 2017Meteor (also known as MeteorJS) is a free and open-source isomorphic JavaScript web framework. It is written in Node.js. Meteor was first introduced in 2012 and is developed by the Meteor Development Group. Meteor allows for rapid prototyping and produces cross-platform code. Meteor integrates with MongoDB. It uses the Distributed…',
+      'image': 'https://reactdom.com/wp-content/uploads/2017/10/ReactDOM-Meteor-tutorials-books-e1507852904365.png',
+      'publisher': 'ReactDOM',
+      'title': 'Best Meteor books, courses, tutorials & videos 2017 - ReactDOM',
+      'url': 'https://reactdom.com/blog/meteor-books'
+    }
     ]))
     .catch(err => {
       console.error(err)
