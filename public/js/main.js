@@ -29,8 +29,10 @@ function renderCard({ image, title, description, url, vote }) {
       ]),
       createElement('div', { class: 'card-content' }, [
         createElement('span', { class: 'truncate card-title activator grey-text text-darken-4' }, [title]),
-        createElement('i', { class: 'material-icons grey-text text-lighten-1' }, ['thumb_up']),
-        createElement('p', {}, [vote])
+        createElement('div', { class: 'row' }, [
+          createElement('i', { class: 'col material-icons grey-text text-lighten-1' }, ['thumb_up']),
+          createElement('p', {class: 'col'}, [vote])
+        ])
       ]),
       createElement('div', { class: 'card-reveal' }, [
         createElement('span', { class: 'card-title grey-text text-darken-4' }, [

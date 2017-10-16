@@ -5,6 +5,7 @@ const jsonParser = bodyParser.json()
 const { ObjectId } = require('mongodb')
 const metaScraper = require('metascraper')
 const path = require('path')
+const app = express()
 
 MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
 
@@ -14,7 +15,6 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
   }
 
   const pages = db.collection('pages')
-  const app = express()
   app.use(jsonParser)
   app.use(express.static('public'))
   app.use(bodyParser.urlencoded({ extended: true }))
@@ -49,22 +49,32 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
 })
 
 const postUrl = url => {
-  console.log(url)
   MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
     if (err) {
       console.error(err)
       process.exit(1)
     }
     const pages = db.collection('pages')
-    metaScraper
-      .scrapeUrl(url)
-      .then((metadata) => {
-        pages
-          .insertOne(metadata)
-      })
-      .catch(err => {
-        console.error(err)
-        process.exit(1)
-      }).then(() => db.close())
+    pages.findOne({'url': url}, (err, res) => {
+      if (err) {
+        console.log(err)
+      }
+      if (res !== null) {
+        console.log(res)
+      }
+      else {
+        metaScraper
+          .scrapeUrl(url)
+          .then((metadata) => {
+            pages
+              .insertOne(metadata)
+          })
+          .catch(err => {
+            console.error(err)
+            process.exit(1)
+          }
+          ).then(() => db.close())
+      }
+    })
   })
 }
