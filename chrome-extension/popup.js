@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, tabs => {
       const tab = tabs[0]
       let url = tab.url
-      console.log(url)
       // fetch
       fetch('http://localhost:3000/api/pages', {
         method: 'POST',
