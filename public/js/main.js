@@ -13,7 +13,7 @@ function createElement(tagName, attributes, children) {
   return $element
 }
 
-function renderCard({ image, title, description, url }) {
+function renderCard({ image, title, description, url, vote }) {
 
   const img = image
 
@@ -29,7 +29,8 @@ function renderCard({ image, title, description, url }) {
       ]),
       createElement('div', { class: 'card-content' }, [
         createElement('span', { class: 'truncate card-title activator grey-text text-darken-4' }, [title]),
-        createElement('i', { class: 'material-icons red-text text-darken-1' }, ['favorite'])
+        createElement('i', { class: 'material-icons grey-text text-lighten-1' }, ['thumb_up']),
+        createElement('p', {}, [vote])
       ]),
       createElement('div', { class: 'card-reveal' }, [
         createElement('span', { class: 'card-title grey-text text-darken-4' }, [

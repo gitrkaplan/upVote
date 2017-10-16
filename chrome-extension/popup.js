@@ -7,14 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }, tabs => {
       const tab = tabs[0]
       let url = tab.url
-      // fetch
       fetch('http://localhost:3000/api/pages', {
         method: 'POST',
         body: '{"url":  "' + url + '" }',
         headers: { 'content-type': 'application/json' }
-      }).then(res => {
-        res = url
-        console.log(res)
       }).catch(err => {
         console.error(err)
       })

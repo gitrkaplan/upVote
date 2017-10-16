@@ -17,7 +17,8 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       'image': 'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ioh_yWEn8gHo/v1/-1x-1.jpg',
       'publisher': 'Bloomberg.com',
       'title': 'As Zenefits Stumbles, Gusto Goes Head-On by Selling Insurance',
-      'url': 'http://www.bloomberg.com/news/articles/2016-05-24/as-zenefits-stumbles-gusto-goes-head-on-by-selling-insurance'
+      'url': 'http://www.bloomberg.com/news/articles/2016-05-24/as-zenefits-stumbles-gusto-goes-head-on-by-selling-insurance',
+      'vote': 5
     },
     {
       'author': 'More Articles by Chase Allbee',
@@ -26,7 +27,8 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       'image': 'https://three29.com/wp-content/uploads/2017/03/Contstruction-e1490997182922.jpg',
       'publisher': 'Three29',
       'title': 'Best CSS Frameworks of 2017 | Three29',
-      'url': 'https://three29.com/best-css-frameworks-2017/'
+      'url': 'https://three29.com/best-css-frameworks-2017/',
+      'vote': 5
     },
     {
       'author': 'Ellen Huet',
@@ -35,7 +37,8 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       'image': 'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ioh_yWEn8gHo/v1/-1x-1.jpg',
       'publisher': 'Bloomberg.com',
       'title': 'As Zenefits Stumbles, Gusto Goes Head-On by Selling Insurance',
-      'url': 'http://www.bloomberg.com/news/articles/2016-05-24/as-zenefits-stumbles-gusto-goes-head-on-by-selling-insurance'
+      'url': 'http://www.bloomberg.com/news/articles/2016-05-24/as-zenefits-stumbles-gusto-goes-head-on-by-selling-insurance',
+      'vote': 5
     },
     {
       author: 'Etanuwoma Jude',
@@ -44,7 +47,9 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       image: 'https://cdn.filestackcontent.com/rXw89KfCQIuvWal613HB',
       publisher: 'Codementor',
       title: 'Creating a simple REST API with expressJS in 5min | Codementor',
-      url: 'https://www.codementor.io/wapjude/creating-a-simple-rest-api-with-expressjs-in-5min-bbtmk51mq' },
+      url: 'https://www.codementor.io/wapjude/creating-a-simple-rest-api-with-expressjs-in-5min-bbtmk51mq',
+      vote: 5
+    },
     {
       author: '10153268557930902',
       date: '2017-01-14T19:55:20.206Z',
@@ -52,7 +57,9 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       image: 'https://cdn-images-1.medium.com/max/1200/1*SnbD3H3BVGB0wPaZHuI_aw.jpeg',
       publisher: 'codeburst',
       title: 'Using Node.js & Express.js to save data to MongoDB Database',
-      url: 'https://codeburst.io/hitchhikers-guide-to-back-end-development-with-examples-3f97c70e0073' },
+      url: 'https://codeburst.io/hitchhikers-guide-to-back-end-development-with-examples-3f97c70e0073',
+      vote: 5
+    },
     {
       author: 'Jeff Andersenblockedunblockfollowfollowingco-founder @manifoldco. Formerly @goinstant (acquired @salesforce ‘12).jan 29, 2015',
       date: '2015-01-30T02:46:24.000Z',
@@ -60,7 +67,9 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       image: 'https://cdn-images-1.medium.com/max/1200/1*k0u7bbZal3fIbVbRzDjhCA.jpeg',
       publisher: 'Medium',
       title: 'Building a Node.js REST API with Express – Jeff Andersen – Medium',
-      url: 'https://medium.com/@jeffandersen/building-a-node-js-rest-api-with-express-46b0901f29b6' },
+      url: 'https://medium.com/@jeffandersen/building-a-node-js-rest-api-with-express-46b0901f29b6',
+      vote: 5
+    },
     {
       author: 'Node.js Foundation',
       date: null,
@@ -68,7 +77,9 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       image: null,
       publisher: 'Node.js',
       title: 'Anatomy of an HTTP Transaction | Node.js',
-      url: 'https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/' },
+      url: 'https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/',
+      vote: 5
+    },
     {
       '_id': '59e2771830eaa515be906dc4',
       'author': 'Reactdom@reactdom·50m#reactjs #reactnative #graphql Newsletter Issue 55 #redux #indiedev #nodejs #webpack #reactrouter #react Https://t.co/fufdh2mbuvreply on Twitterretweet on Twitterlike on Twittertwitter',
@@ -77,7 +88,8 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       'image': 'https://reactdom.com/wp-content/uploads/2017/10/ReactDOM-Meteor-tutorials-books-e1507852904365.png',
       'publisher': 'ReactDOM',
       'title': 'Best Meteor books, courses, tutorials & videos 2017 - ReactDOM',
-      'url': 'https://reactdom.com/blog/meteor-books'
+      'url': 'https://reactdom.com/blog/meteor-books',
+      vote: 5
     }
     ]))
     .catch(err => {

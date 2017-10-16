@@ -65,8 +65,6 @@ const postUrl = url => {
       .catch(err => {
         console.error(err)
         process.exit(1)
-      })
-
-      .then(() => db.close())
+      }).then(() => db.close())
   })
 }
