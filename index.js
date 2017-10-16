@@ -17,6 +17,7 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
   const app = express()
   app.use(jsonParser)
   app.use(express.static('public'))
+  app.use(bodyParser.urlencoded({ extended: true }))
 
   app.get('/', (req, res) => {
     res.sendFile(path.resolve('index.html'))
@@ -24,15 +25,10 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
   })
 
   app.post('/api/pages', (req, res) => {
-    pages
-      .insertOne(req.body, (err, result) => {
-        if (err) {
-          console.error(err)
-          res.sendStatus(500)
-        }
-        console.log(req.body)
-        res.sendStatus(201)
-      })
+    const body = req.body
+    const url = body.url
+    postUrl(url)
+    res.sendStatus(201)
   })
 
   app.get('/api/pages', (req, res) => {
@@ -51,3 +47,24 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
   })
 
 })
+
+const postUrl = url => {
+  console.log(url)
+  MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
+    if (err) {
+      console.error(err)
+      process.exit(1)
+    }
+    const pages = db.collection('pages')
+    metaScraper
+      .scrapeUrl(url)
+      .then((metadata) => {
+        pages
+          .insertOne(metadata)
+      })
+      .catch(err => {
+        console.error(err)
+        process.exit(1)
+      }).then(() => db.close())
+  })
+}

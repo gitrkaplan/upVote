@@ -13,7 +13,7 @@ function createElement(tagName, attributes, children) {
   return $element
 }
 
-function renderCard({ image, title, description, url }) {
+function renderCard({ image, title, description, url, vote }) {
 
   const img = image
 
@@ -25,19 +25,19 @@ function renderCard({ image, title, description, url }) {
   createElement('div', { class: 'col s12 m6 l4' }, [
     createElement('div', { class: 'hoverable card' }, [
       createElement('div', { class: 'card-image waves-effect waves-block waves-light' }, [
-        createElement('img', { class: 'activator', src: image, alt: title }, []),
-        createElement('img', { class: 'card-img-top', src: image, alt: title }, [])
+        createElement('img', { class: 'activator', src: image, alt: title }, [])
       ]),
       createElement('div', { class: 'card-content' }, [
         createElement('span', { class: 'truncate card-title activator grey-text text-darken-4' }, [title]),
-        createElement('i', { class: 'material-icons red-text text-darken-1' }, ['favorite'])
+        createElement('i', { class: 'material-icons grey-text text-lighten-1' }, ['thumb_up']),
+        createElement('p', {}, [vote])
       ]),
       createElement('div', { class: 'card-reveal' }, [
         createElement('span', { class: 'card-title grey-text text-darken-4' }, [
           title,
           createElement('i', { class: 'material-icons right' }, ['close'])
         ]),
-        createElement('p', {}, [title]),
+        createElement('p', {}, [description]),
         createElement('a', { href: url, target: '_blank' }, ['Read article'])
       ])
     ])
