@@ -28,8 +28,6 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
     const body = req.body
     const url = body.url
     pages.findOne({url: url}, (err, page) => {
-      console.log(page)
-      console.log(url)
       if (err) {
         console.error(err)
         res.sendStatus(500)
@@ -43,6 +41,16 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
           metadata.url = url
           return pages
             .insertOne(metadata)
+            .then(pages.findAndModify(
+              { url: url },
+              [],
+              { $inc: { vote: 0 } },
+              { new: true },
+              (err, result) => {
+                if (err) {
+                  console.error(err)
+                }
+              }))
         })
         .catch(err => {
           console.error(err)
