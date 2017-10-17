@@ -27,13 +27,36 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
   app.post('/api/pages', (req, res) => {
     const body = req.body
     const url = body.url
-    postUrl(url)
-    res.sendStatus(201)
+    pages.findOne({url: url}, (err, page) => {
+      console.log(page)
+      console.log(url)
+      if (err) {
+        console.error(err)
+        res.sendStatus(500)
+      }
+      if (page !== null) {
+        return res.sendStatus(201)
+      }
+      metaScraper
+        .scrapeUrl(url)
+        .then((metadata) => {
+          metadata.url = url
+          return pages
+            .insertOne(metadata)
+        })
+        .catch(err => {
+          console.error(err)
+          res.sendStatus(500)
+        })
+        .then(() => {
+          res.sendStatus(201)
+        })
+    })
   })
 
   app.get('/api/pages', (req, res) => {
     pages
-      .find(req.query)
+      .find()
       .toArray()
       .then(list => res.json(list))
       .catch(err => {
@@ -47,34 +70,3 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
   })
 
 })
-
-const postUrl = url => {
-  MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
-    if (err) {
-      console.error(err)
-      process.exit(1)
-    }
-    const pages = db.collection('pages')
-    pages.findOne({'url': url}, (err, res) => {
-      if (err) {
-        console.log(err)
-      }
-      if (res !== null) {
-        console.log(res)
-      }
-      else {
-        metaScraper
-          .scrapeUrl(url)
-          .then((metadata) => {
-            pages
-              .insertOne(metadata)
-          })
-          .catch(err => {
-            console.error(err)
-            process.exit(1)
-          }
-          ).then(() => db.close())
-      }
-    })
-  })
-}
