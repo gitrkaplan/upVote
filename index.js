@@ -45,7 +45,7 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
             .then(pages.findAndModify(
               { url: url },
               [],
-              { $inc: { vote: 0 } },
+              { $inc: { vote: 1 } },
               { new: true },
               (err, result) => {
                 if (err) {
