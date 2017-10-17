@@ -57,6 +57,17 @@ fetch('/api/pages')
         return
       }
       response.json().then(data => {
+        data.sort((a, b) => {
+          const voteA = a.vote
+          const voteB = b.vote
+          if (voteA < voteB) {
+            return 1
+          }
+          if (voteA > voteB) {
+            return -1
+          }
+          return 0
+        })
         data.forEach(object => {
           cards.appendChild(renderCard(object))
         })

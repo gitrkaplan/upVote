@@ -26,8 +26,9 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
 
   app.post('/api/pages', (req, res) => {
     const body = req.body
-    const url = body.url
+    let url = body.url
     pages.findOne({url: url}, (err, page) => {
+      console.log(url)
       if (err) {
         console.error(err)
         res.sendStatus(500)

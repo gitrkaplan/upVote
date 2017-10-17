@@ -18,7 +18,7 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       'publisher': 'Bloomberg.com',
       'title': 'As Zenefits Stumbles, Gusto Goes Head-On by Selling Insurance',
       'url': 'http://www.bloomberg.com/news/articles/2016-05-24/as-zenefits-stumbles-gusto-goes-head-on-by-selling-insurance',
-      'vote': 5
+      'vote': 2
     },
     {
       'author': 'More Articles by Chase Allbee',
@@ -28,7 +28,7 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       'publisher': 'Three29',
       'title': 'Best CSS Frameworks of 2017 | Three29',
       'url': 'https://three29.com/best-css-frameworks-2017/',
-      'vote': 5
+      'vote': 3
     },
     {
       author: 'Etanuwoma Jude',
@@ -38,7 +38,7 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       publisher: 'Codementor',
       title: 'Creating a simple REST API with expressJS in 5min | Codementor',
       url: 'https://www.codementor.io/wapjude/creating-a-simple-rest-api-with-expressjs-in-5min-bbtmk51mq',
-      vote: 5
+      vote: 1
     },
     {
       author: '10153268557930902',
@@ -48,7 +48,7 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       publisher: 'codeburst',
       title: 'Using Node.js & Express.js to save data to MongoDB Database',
       url: 'https://codeburst.io/hitchhikers-guide-to-back-end-development-with-examples-3f97c70e0073',
-      vote: 5
+      vote: 8
     },
     {
       author: 'Jeff Andersenblockedunblockfollowfollowingco-founder @manifoldco. Formerly @goinstant (acquired @salesforce ‘12).jan 29, 2015',
@@ -58,7 +58,7 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       publisher: 'Medium',
       title: 'Building a Node.js REST API with Express – Jeff Andersen – Medium',
       url: 'https://medium.com/@jeffandersen/building-a-node-js-rest-api-with-express-46b0901f29b6',
-      vote: 5
+      vote: 7
     },
     {
       author: 'Node.js Foundation',
@@ -68,7 +68,7 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       publisher: 'Node.js',
       title: 'Anatomy of an HTTP Transaction | Node.js',
       url: 'https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/',
-      vote: 5
+      vote: 1
     },
     {
       '_id': '59e2771830eaa515be906dc4',
@@ -79,7 +79,7 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       'publisher': 'ReactDOM',
       'title': 'Best Meteor books, courses, tutorials & videos 2017 - ReactDOM',
       'url': 'https://reactdom.com/blog/meteor-books',
-      vote: 5
+      vote: 10
     }
     ]))
     .catch(err => {
