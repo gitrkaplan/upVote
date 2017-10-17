@@ -29,8 +29,10 @@ function renderCard({ image, title, description, url, vote }) {
       ]),
       createElement('div', { class: 'card-content' }, [
         createElement('span', { class: 'truncate card-title activator grey-text text-darken-4' }, [title]),
-        createElement('i', { class: 'material-icons grey-text text-lighten-1' }, ['thumb_up']),
-        createElement('p', {}, [vote])
+        createElement('div', { class: 'row' }, [
+          createElement('i', { class: 'col material-icons grey-text text-lighten-1' }, ['thumb_up']),
+          createElement('p', {class: 'col'}, [vote])
+        ])
       ]),
       createElement('div', { class: 'card-reveal' }, [
         createElement('span', { class: 'card-title grey-text text-darken-4' }, [
@@ -55,6 +57,17 @@ fetch('/api/pages')
         return
       }
       response.json().then(data => {
+        data.sort((a, b) => {
+          const voteA = a.vote
+          const voteB = b.vote
+          if (voteA < voteB) {
+            return 1
+          }
+          if (voteA > voteB) {
+            return -1
+          }
+          return 0
+        })
         data.forEach(object => {
           cards.appendChild(renderCard(object))
         })
