@@ -8,11 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const tab = tabs[0]
       let url = tab.url
       getSelectedTags()
-      url = JSON.stringify({'url': url})
+      const tags = selectedTags
+      let data = {
+        'url': url,
+        'tags': tags
+      }
       console.log(url, tags)
       fetch('http://localhost:3000/api/pages', {
         method: 'POST',
-        body: url,
+        body: JSON.stringify(data),
         headers: { 'content-type': 'application/json' }
       }).catch(err => {
         console.error(err)
