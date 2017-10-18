@@ -1,44 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"/>
-    <title>upVote</title>
-    <style type="text/css">
-      body {
-        white-space: nowrap;
-      }
 
-      h1 {
-        font-size: 15px;
-      }
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" />
+  <title>upVote</title>
+  <style type="text/css">
+    body {
+      white-space: nowrap;
+    }
 
-      .btn {
-        border-radius:23px;
-      }
+    h1 {
+      font-size: 15px;
+    }
 
-      #container {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-      }
-    </style>
-    <script src="popup.js"></script>
-  </head>
-  <body>
-    <div class="row">
-        <div class="col s12">
-          <div class="card grey lighten-3">
-            <div class="card-content dark-text">
-              <span class="card-title">upVote</span>
-              <p>To add this site to upVote, simply click on the related tags and click add.</p>
-            </div>
-            <div class="card-action center-align">
-              <a id="add-button" class="hoverable btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-            </div>
+    ul {
+      display: inline-flex;
+      flex-direction: row;
+      padding-bottom: 30px;
+    }
+
+    li {
+      padding: 0 5px 20px;
+    }
+
+    #container {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+  <script src="popup.js"></script>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col s12">
+      <div class="card grey lighten-3">
+        <div class="card-content dark-text">
+          <span class="card-title">upVote</span>
+          <p>To add this site to upVote, simply click on the related tags and click add.</p>
+        </div>
+        <div class="card-action center-align">
+          <a id="add-button" class="hoverable btn-floating btn-large red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <ul id="tags">
+              <li><a id="html" class="test hoverable btn-floating grey" data-test="html"><i class="devicon-html5-plain"></i></a></li>
+              <li><a id="css" class="hoverable btn-floating grey" data-test="css"><i class="devicon-css3-plain"></i></a></li>
+              <li><a id="javascript" class="hoverable btn-floating grey" data-test="javascript"><i class="devicon-javascript-plain"></i></a></li>
+              <li><a id="nodejs" class="hoverable btn-floating grey" data-test="nodejs"><i class="devicon-nodejs-plain"></i></a></li>
+              <li><a id="express" class="hoverable btn-floating grey" data-test="express"><i class="devicon-express-original"></i></a></li>
+              <li><a id="angularjs" class="hoverable btn-floating grey" data-test="angularjs"><i class="devicon-angularjs-plain"></i></a></li>
+              <li><a id="react" class="hoverable btn-floating grey" data-test="react"><i class="devicon-react-original"></i></a></li>
+              <li><a id="mongodb" class="hoverable btn-floating grey" data-test="mongodb"><i class="devicon-mongodb-plain"></i></a></li>
+              <li><a id="bootstrap" class="hoverable btn-floating grey" data-test="bootstrap"><i class="devicon-bootstrap-plain"></i></a></li>
+              <li><a id="git" class="hoverable btn-floating grey" data-test="git"><i class="devicon-git-plain"></i></a></li>
+              <li><a id="heroku" class="hoverable btn-floating grey" data-test="heroku"><i class="devicon-heroku-original"></i></a></li>
+            </ul>
           </div>
         </div>
       </div>
-  </body>
+    </div>
+  </div>
+</body>
+
 </html>
