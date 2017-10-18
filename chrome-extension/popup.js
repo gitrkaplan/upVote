@@ -46,14 +46,3 @@ const getSelectedTags = () => {
     }
   })
 }
-// Listen to the row for clicks.
-// Determine if the clicked thing was icon.
-// If not, return
-// Toggle a selected class
-
-// Enhance ADD Button listener to
-// Query the list of icons
-// Loop through them
-// Build an array of tags for the 'selected' tags
-
-// Console log an array of clicked tags
