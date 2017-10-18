@@ -8,16 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const tab = tabs[0]
       let url = tab.url
       getSelectedTags()
-      console.log(selectedTags)
+      url = JSON.stringify({'url': url})
+      console.log(url, tags)
       fetch('http://localhost:3000/api/pages', {
         method: 'POST',
-        body: '{"url":  "' + url + '" }',
+        body: url,
         headers: { 'content-type': 'application/json' }
       }).catch(err => {
         console.error(err)
       })
     })
     selectedTags = []
+    setTimeout(() => {
+      window.close()
+    }, 500)
   })
   const tags = document.querySelectorAll('.tags')
   for (let i = 0; i < tags.length; i++) {
@@ -46,6 +50,6 @@ const getSelectedTags = () => {
 // Enhance ADD Button listener to
 // Query the list of icons
 // Loop through them
-// Build an array of tags for the "selected" tags
+// Build an array of tags for the 'selected' tags
 
 // Console log an array of clicked tags
