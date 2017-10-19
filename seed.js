@@ -11,17 +11,18 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
   pages
     .deleteMany({})
     .then(() => pages.insertMany([{
-      'author': 'Ellen Huet',
-      'date': '2016-05-24T18:00:03.894Z',
-      'description': 'The HR startups go to war.',
-      'image': 'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ioh_yWEn8gHo/v1/-1x-1.jpg',
-      'publisher': 'Bloomberg.com',
-      tags: [
-        'express'
+      '_id': '59e8f03adfc9d1637a6c2da6',
+      'author': null,
+      'date': '2012-08-14T19:00:00.000Z',
+      'description': 'Yearofmoo is a blog intended to supercharge the abilities of programmers everywhere.',
+      'image': 'http://www.yearofmoo.com/images/mookins/cover/dragon.png',
+      'publisher': 'yearofmoo',
+      'tags': [
+        'angularjs'
       ],
-      'title': 'As Zenefits Stumbles, Gusto Goes Head-On by Selling Insurance',
-      'url': 'http://www.bloomberg.com/news/articles/2016-05-24/as-zenefits-stumbles-gusto-goes-head-on-by-selling-insurance',
-      'vote': 2
+      'title': 'Use AngularJS to Power Your Web Application - yearofmoo.com',
+      'url': 'https://www.yearofmoo.com/2012/08/use-angularjs-to-power-your-web-application.html',
+      'vote': 1
     },
     {
       'author': 'More Articles by Chase Allbee',
@@ -35,7 +36,7 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       ],
       'title': 'Best CSS Frameworks of 2017 | Three29',
       'url': 'https://three29.com/best-css-frameworks-2017/',
-      'vote': 3
+      'vote': 1
     },
     {
       author: 'Etanuwoma Jude',
@@ -58,12 +59,12 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       image: 'https://cdn-images-1.medium.com/max/1200/1*SnbD3H3BVGB0wPaZHuI_aw.jpeg',
       publisher: 'codeburst',
       tags: [
-        'html',
-        'angularjs'
+        'nodejs',
+        'expressjs'
       ],
       title: 'Using Node.js & Express.js to save data to MongoDB Database',
       url: 'https://codeburst.io/hitchhikers-guide-to-back-end-development-with-examples-3f97c70e0073',
-      vote: 8
+      vote: 3
     },
     {
       author: 'Jeff Andersenblockedunblockfollowfollowingco-founder @manifoldco. Formerly @goinstant (acquired @salesforce ‘12).jan 29, 2015',
@@ -72,40 +73,26 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
       image: 'https://cdn-images-1.medium.com/max/1200/1*k0u7bbZal3fIbVbRzDjhCA.jpeg',
       publisher: 'Medium',
       tags: [
-        'react',
-        'bootstrap'
+        'nodejs',
+        'expressjs'
       ],
       title: 'Building a Node.js REST API with Express – Jeff Andersen – Medium',
       url: 'https://medium.com/@jeffandersen/building-a-node-js-rest-api-with-express-46b0901f29b6',
       vote: 7
     },
     {
-      author: 'Node.js Foundation',
-      date: null,
-      description: 'The purpose of this guide is to impart a solid understanding of the process of\nNode.js HTTP handling. We\'ll assume that you know, in a general sense, how HTTP\nrequests work, regardless of language or programming environment. We\'ll also\nassume a bit of familiarity with Node.js EventEmitters and Streams.\nIf you\'re not quite familiar with them, it\'s worth taking a quick read through\nthe API docs for each of those.',
-      image: null,
-      publisher: 'Node.js',
-      tags: [
-        'javascript'
+      '_id': '59e902cf7d7aaa64f04d983d',
+      'author': null,
+      'date': null,
+      'description': 'AngularJS is an incredibly powerful framework but sometimes it can be confusing and frustrating trying to figure out how all of these amazing features actually fit together. In this series, you will learn how to build a non-trivial AngularJS application from the ground up through a series of small, digestible lessons. \nAs we build out our sample application, Eggly, you will quickly start to identify useful techniques that you can apply to your own projects.  The videos series is broken out into three series so that you can start at whatever level is most appropriate for you.\nGetting Started\nIn this first series, we are going to focus on the absolute essentials for getting an AngularJS application up and running. We will start with a static HTML page and learn how to bootstrap an AngularJS application and add in functionality using AngularJS views and controllers. When we complete this section, you will have a functioning Eggly application where you can create, update and delete bookmarks and filter them based on the selected bookmark category. \nDont miss Part 2: Application Architecture (https://egghead.io/series/angularjs-application-architecture)!',
+      'image': 'https://d2eip9sf3oo6c2.cloudfront.net/tech/defaults/course_image_full_angularjs.png',
+      'publisher': 'egghead.io',
+      'tags': [
+        'angularjs'
       ],
-      title: 'Anatomy of an HTTP Transaction | Node.js',
-      url: 'https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/',
-      vote: 1
-    },
-    {
-      '_id': '59e2771830eaa515be906dc4',
-      'author': 'Reactdom@reactdom·50m#reactjs #reactnative #graphql Newsletter Issue 55 #redux #indiedev #nodejs #webpack #reactrouter #react Https://t.co/fufdh2mbuvreply on Twitterretweet on Twitterlike on Twittertwitter',
-      'date': '2017-10-07T18:24:00.000Z',
-      'description': 'Last updated on October 12th, 2017Meteor (also known as MeteorJS) is a free and open-source isomorphic JavaScript web framework. It is written in Node.js. Meteor was first introduced in 2012 and is developed by the Meteor Development Group. Meteor allows for rapid prototyping and produces cross-platform code. Meteor integrates with MongoDB. It uses the Distributed…',
-      'image': 'https://reactdom.com/wp-content/uploads/2017/10/ReactDOM-Meteor-tutorials-books-e1507852904365.png',
-      'publisher': 'ReactDOM',
-      tags: [
-        'mongodb',
-        'express'
-      ],
-      'title': 'Best Meteor books, courses, tutorials & videos 2017 - ReactDOM',
-      'url': 'https://reactdom.com/blog/meteor-books',
-      vote: 10
+      'title': 'AngularJS Fundamentals - Course by @simpulton',
+      'url': 'https://egghead.io/courses/angularjs-fundamentals',
+      'vote': 1
     }
     ]))
     .catch(err => {
