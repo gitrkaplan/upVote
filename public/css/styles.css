@@ -14,3 +14,7 @@ html {
 nav {
   background-color: #16a085;
 }
+
+.hidden {
+  display: none;
+}
