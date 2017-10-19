@@ -27,8 +27,8 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
   app.post('/api/pages', (req, res) => {
     const body = req.body
     let url = body.url
+    let tags = body.tags
     pages.findOne({url: url}, (err, page) => {
-      console.log(url)
       if (err) {
         console.error(err)
         res.sendStatus(500)
@@ -45,7 +45,7 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
             .then(pages.findAndModify(
               { url: url },
               [],
-              { $inc: { vote: 1 } },
+              {$set: {vote: 1, tags}},
               { new: true },
               (err, result) => {
                 if (err) {
