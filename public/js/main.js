@@ -84,8 +84,8 @@ fetch('/api/pages')
 const filters = document.querySelectorAll('.filters')
 for (let i = 0; i < filters.length; i++) {
   filters[i].addEventListener('click', function () {
-    filters[i].classList.toggle('red')
-    filters[i].classList.toggle('grey')
+    filters[i].parentNode.classList.toggle('darken-2')
+    // filters[i].classList.toggle('grey')
     const tags = document.querySelectorAll('.filter')
     let currentFilter = (filters[i].dataset.tooltip)
     currentFilter = currentFilter.split(' ')
