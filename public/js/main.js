@@ -77,3 +77,10 @@ fetch('/api/pages')
   .catch(err => {
     console.log('Fetch Error :-S', err)
   })
+
+const filters = document.querySelectorAll('.filters')
+for (let i = 0; i < filters.length; i++) {
+  filters[i].addEventListener('click', function () {
+    console.log(filters[i])
+  })
+}
