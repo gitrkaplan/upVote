@@ -13,16 +13,19 @@ function createElement(tagName, attributes, children) {
   return $element
 }
 
-function renderCard({ image, title, description, url, vote }) {
-
+function renderCard({ image, title, description, tags, url, vote }) {
   const img = image
+  let dataTags = ''
+  if (tags !== undefined) {
+    dataTags = tags.join(' ')
+  }
 
   if (img == null) {
     image = 'http://www.brianhilton.com.au/images/inventory/image-not-found-medium.gif'
   }
 
   const $card =
-  createElement('div', { class: 'col s12 m6 l4' }, [
+  createElement('div', { class: 'filter col s12 m6 l4', 'data-item-tags': dataTags }, [
     createElement('div', { class: 'hoverable card' }, [
       createElement('div', { class: 'card-image waves-effect waves-block waves-light' }, [
         createElement('img', { class: 'activator', src: image, alt: title }, [])
@@ -77,3 +80,23 @@ fetch('/api/pages')
   .catch(err => {
     console.log('Fetch Error :-S', err)
   })
+
+const filters = document.querySelectorAll('.filters')
+for (let i = 0; i < filters.length; i++) {
+  filters[i].addEventListener('click', function () {
+    filters[i].classList.toggle('red')
+    filters[i].classList.toggle('grey')
+    const tags = document.querySelectorAll('.filter')
+    let currentFilter = (filters[i].dataset.tooltip)
+    currentFilter = currentFilter.split(' ')
+    tags.forEach(element => {
+      let elements = element.dataset.itemTags
+      elements = elements.split(' ')
+      currentFilter.every(item => {
+        if (!elements.includes(item)) {
+          element.classList.toggle('hidden')
+        }
+      })
+    })
+  })
+}
