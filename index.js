@@ -37,7 +37,8 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
         pages.findAndModify(
           { url: url },
           [],
-          {$inc: {vote: 1}})
+          {$inc: {vote: 1},
+            $set: {tags: tags}})
         return res.sendStatus(201)
       }
       metaScraper

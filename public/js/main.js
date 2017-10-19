@@ -15,7 +15,11 @@ function createElement(tagName, attributes, children) {
 
 function renderCard({ image, title, description, tags, url, vote }) {
   const img = image
-  let dataTags = tags.join(' ')
+  let dataTags = ''
+  if (tags !== undefined) {
+    dataTags = tags.join(' ')
+  }
+
   if (img == null) {
     image = 'http://www.brianhilton.com.au/images/inventory/image-not-found-medium.gif'
   }
