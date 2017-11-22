@@ -16,6 +16,7 @@ $ npm run start
 - Express
 - MongoDB
 - Metascraper
+- Material UI
 
 ## Screen Capture
 ![upvote_adding](https://user-images.githubusercontent.com/29240723/33151222-025e2472-cf8c-11e7-8373-11ced2a38732.gif)
