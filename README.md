@@ -18,7 +18,7 @@ $ npm run start
 - Metascraper
 
 ## Screen Capture
-![upvote_addfilter](https://user-images.githubusercontent.com/29240723/31746680-7f0fe738-b41d-11e7-872d-e886d1c63ab5.gif)
+![upvote_adding](https://user-images.githubusercontent.com/29240723/33151222-025e2472-cf8c-11e7-8373-11ced2a38732.gif)
 
-![upvote_filteredview](https://user-images.githubusercontent.com/29240723/31792603-71a62364-b4d1-11e7-89d4-cf29ead8f22f.gif)
+![upvote_filtering](https://user-images.githubusercontent.com/29240723/33151223-027ac140-cf8c-11e7-8b78-a65e50f3d14a.gif)
 
