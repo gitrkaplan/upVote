@@ -7,9 +7,7 @@ const metaScraper = require('metascraper')
 const path = require('path')
 const app = express()
 
-var uristring = process.env.MONGOLAB_ORANGE_URI
-
-MongoClient.connect(uristring, (err, db) => {
+MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
   if (err) {
     console.error(err)
     process.exit(1)
