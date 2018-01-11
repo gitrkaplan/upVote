@@ -7,8 +7,9 @@ const metaScraper = require('metascraper')
 const path = require('path')
 const app = express()
 
-MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
+var uristring = process.env.MONGOLAB_ORANGE_URI
 
+MongoClient.connect(uristring, (err, db) => {
   if (err) {
     console.error(err)
     process.exit(1)
@@ -28,35 +29,35 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
     const body = req.body
     let url = body.url
     let tags = body.tags
-    pages.findOne({url: url}, (err, page) => {
+    pages.findOne({ url: url }, (err, page) => {
       if (err) {
         console.error(err)
         res.sendStatus(500)
       }
       if (page !== null) {
-        pages.findAndModify(
-          { url: url },
-          [],
-          {$inc: {vote: 1},
-            $set: {tags: tags}})
+        pages.findAndModify({ url: url }, [], {
+          $inc: { vote: 1 },
+          $set: { tags: tags }
+        })
         return res.sendStatus(201)
       }
       metaScraper
         .scrapeUrl(url)
-        .then((metadata) => {
+        .then(metadata => {
           metadata.url = url
-          return pages
-            .insertOne(metadata)
-            .then(pages.findAndModify(
+          return pages.insertOne(metadata).then(
+            pages.findAndModify(
               { url: url },
               [],
-              {$set: {vote: 1, tags}},
+              { $set: { vote: 1, tags } },
               { new: true },
               (err, result) => {
                 if (err) {
                   console.error(err)
                 }
-              }))
+              }
+            )
+          )
         })
         .catch(err => {
           console.error(err)
@@ -82,5 +83,4 @@ MongoClient.connect('mongodb://localhost/updoot', (err, db) => {
   app.listen(3000, () => {
     console.log('Visit http://localhost:3000')
   })
-
 })
